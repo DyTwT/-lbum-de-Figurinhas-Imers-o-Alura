@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum Feminismo - Grandes Mulheres da História</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- BOTÕES (mantidos iguais) -->
+    <button id="theme-toggle" class="theme-btn" title="Alternar tema">
+        <!-- Sol: visível no tema escuro (clica para ir ao claro) -->
+        <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <!-- Lua: visível no tema claro (clica para ir ao escuro) -->
+        <svg class="theme-icon-moon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+    </button>
+    <button id="sound-toggle" class="sound-btn" title="Alternar som">
+        <!-- Som ligado -->
+        <svg class="sound-icon-on" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        </svg>
+        <!-- Som desligado -->
+        <svg class="sound-icon-off hidden" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+        </svg>
+    </button>
+
+    <button id="btn-prev" class="nav-btn nav-btn-left" title="Página anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+        </svg>
+    </button>
+    <button id="btn-next" class="nav-btn nav-btn-right" title="Próxima página">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+        </svg>
+    </button>
+
+    <div class="album-viewport" id="album-viewport">
+        <div class="flip-book" id="book">
+
+            <!-- CAPA -->
+            <div class="page page-cover" data-density="hard">
+                <div class="page-content cover-content">
+                    <div class="cover-body">
+                        <h1 class="cover-title">FEMINISMO</h1>
+                        <h2 class="cover-subtitle">ÁLBUM</h2>
+
+                        <p class="cover-footer-text">
+                            Mulheres que mudaram a história
+                        </p>
+                    </div>
+
+                    <!-- LOGO ANIMADA -->
+                    <div class="cover-art">
+                        <div class="art-grid"></div>
+
+                        <!-- Mini-card: Mary Wollstonecraft -->
+                        <div class="mini-card mc-turing">
+                            <div class="mc-avatar">MW</div>
+                            <div class="mc-num">#01</div>
+                        </div>
+
+                        <!-- Mini-card: Simone de Beauvoir -->
+                        <div class="mini-card mc-guido">
+                            <div class="mc-avatar">SB</div>
+                            <div class="mc-num">#06</div>
+                        </div>
+
+                        <!-- Mini-card: Marielle Franco -->
+                        <div class="mini-card mc-jobs">
+                            <div class="mc-avatar">MF</div>
+                            <div class="mc-num">#14</div>
+                        </div>
+
+                        <!-- Esfera central com símbolo de Vênus -->
+                        <div class="tech-sphere">
+                            <div class="sphere-ring ring-1"></div>
+                            <div class="sphere-ring ring-2"></div>
+                            <div class="sphere-core">
+                                <!-- Símbolo de Vênus / Feminismo -->
+                                <svg class="art-logo" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="9" r="6"/>
+                                    <line x1="12" y1="15" x2="12" y2="22"/>
+                                    <line x1="9" y1="19" x2="15" y2="19"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cover-footer">
+                        <span>Imersão Alura • 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 1 -->
+            <div class="page page-left">
+                <div class="page-content">
+                    <h3 class="page-title">Pioneiras do Feminismo</h3>
+
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#01</div>
+                            <div class="slot-name">Mary Wollstonecraft</div>
+                            <div class="slot-role">Defensora dos direitos das mulheres (1792)</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#02</div>
+                            <div class="slot-name">Olympe de Gouges</div>
+                            <div class="slot-role">Declaração dos Direitos da Mulher</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#03</div>
+                            <div class="slot-name">Sojourner Truth</div>
+                            <div class="slot-role">Abolicionista e feminista</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#04</div>
+                            <div class="slot-name">Susan B. Anthony</div>
+                            <div class="slot-role">Luta pelo voto feminino</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#05</div>
+                            <div class="slot-name">Elizabeth Cady Stanton</div>
+                            <div class="slot-role">Convenção de Seneca Falls</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 2 -->
+            <div class="page page-right">
+                <div class="page-content">
+                    <h3 class="page-title">Intelectuais e Escritoras</h3>
+
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#06</div>
+                            <div class="slot-name">Simone de Beauvoir</div>
+                            <div class="slot-role">"O Segundo Sexo"</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#07</div>
+                            <div class="slot-name">Virginia Woolf</div>
+                            <div class="slot-role">"Um teto todo seu"</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#08</div>
+                            <div class="slot-name">bell hooks</div>
+                            <div class="slot-role">Feminismo interseccional</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#09</div>
+                            <div class="slot-name">Angela Davis</div>
+                            <div class="slot-role">Feminismo negro</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#10</div>
+                            <div class="slot-name">Judith Butler</div>
+                            <div class="slot-role">Teoria de gênero</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 3 -->
+            <div class="page page-left">
+                <div class="page-content">
+                    <h3 class="page-title">Feminismo no Brasil</h3>
+
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#11</div>
+                            <div class="slot-name">Bertha Lutz</div>
+                            <div class="slot-role">Direito ao voto feminino no Brasil</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#12</div>
+                            <div class="slot-name">Nísia Floresta</div>
+                            <div class="slot-role">Educação feminina</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#13</div>
+                            <div class="slot-name">Djamila Ribeiro</div>
+                            <div class="slot-role">Lugar de fala</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#14</div>
+                            <div class="slot-name">Marielle Franco</div>
+                            <div class="slot-role">Direitos humanos</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#15</div>
+                            <div class="slot-name">Heleieth Saffioti</div>
+                            <div class="slot-role">Sociologia feminista</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 4 -->
+            <div class="page page-right">
+                <div class="page-content">
+                    <h3 class="page-title">Feminismo Contemporâneo</h3>
+
+                    <div class="stickers-grid">
+                        <div class="sticker-slot">
+                            <div class="slot-number">#16</div>
+                            <div class="slot-name">Malala Yousafzai</div>
+                            <div class="slot-role">Educação feminina</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#17</div>
+                            <div class="slot-name">Emma Watson</div>
+                            <div class="slot-role">HeForShe (ONU)</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#18</div>
+                            <div class="slot-name">Chimamanda Ngozi Adichie</div>
+                            <div class="slot-role">"Sejamos todos feministas"</div>
+                        </div>
+
+                        <div class="sticker-slot">
+                            <div class="slot-number">#19</div>
+                            <div class="slot-name">Greta Thunberg</div>
+                            <div class="slot-role">Ativismo climático jovem</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTRACAPA -->
+            <div class="page page-cover-back" data-density="hard">
+                <div class="page-content">
+                    <h2>ÁLBUM DO FEMINISMO</h2>
+
+                    <p class="summary-text">
+                        Este álbum celebra mulheres que transformaram o mundo por meio da luta por igualdade,
+                        liberdade e direitos. Cada figurinha representa uma história de coragem e mudança.
+                    </p>
+
+                    <div class="cover-back-footer">
+                        <span>Alura • 2026</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
