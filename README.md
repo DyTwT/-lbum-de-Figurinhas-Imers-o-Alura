@@ -37,7 +37,9 @@ Durante o desenvolvimento, utilizei a **IA do Google (Antigravity)** como apoio 
 
 ## 📸 Preview
 
-*(Você pode adicionar aqui uma imagem ou GIF do projeto depois)*
+<p align="center">
+  <img src="previa.png" alt="Prévia do site" width="800">
+</p>
 
 ## 📌 Status
 
